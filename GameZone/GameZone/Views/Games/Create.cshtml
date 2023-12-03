@@ -7,7 +7,7 @@
 	Create New Game 
 </h5>
 
-<form asp-controller="Games">
+<form asp-controller="Games" enctype="multipart/form-data">
 	<div class="row">
 		<div class="col-md-6">
 			<div class="form-group">
@@ -38,7 +38,7 @@
 				<label asp-for="Cover" class="form-label mt-4"></label>
 				<input class="form-control" type="file" asp-for="Cover">
 				<small class="form-text text-muted">Only jpg, jpeg, png Files Are Allowed With Maximum Size 1MB. </small>
-				<span asp-validation-for="Cover" class="text-danger"></span>
+				<span asp-validation-for="Cover" class="text-danger d-block"></span>
 			</div>
 			<button type="submit" class=" btn btn-success mt-4">Create</button>
 		</div>

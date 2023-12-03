@@ -15,7 +15,7 @@ namespace DataAccessLayer.Data.Configurations
         {
             builder.Property(G => G.Name).HasMaxLength(500);
             builder.Property(G => G.Descripiton).HasMaxLength(2500);
-            builder.Property(G => G.Cover).HasMaxLength(500);
+            builder.Property(G => G.CoverName).HasMaxLength(500);
         }
     }
 }

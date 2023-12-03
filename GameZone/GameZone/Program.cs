@@ -1,4 +1,8 @@
+using AutoMapper;
+using BusinessLogicLayer.Interfaces;
+using BusinessLogicLayer.Repositories;
 using DataAccessLayer.Data.Contexts;
+using GameZone.Helpers;
 using Microsoft.EntityFrameworkCore;
 
 namespace GameZone
@@ -10,13 +14,24 @@ namespace GameZone
             var builder = WebApplication.CreateBuilder(args);
             var ConnectionString = builder.Configuration.GetConnectionString("DefaultConnection")
                 ?? throw new InvalidOperationException("There Is No ConnectionString :(");
+
             // Add services to the container.
+            
             builder.Services.AddDbContext<ApplicationDbContext>(
                 Options =>  Options.UseSqlServer(ConnectionString) 
                 );
+
             builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
-            var app = builder.Build();
+            builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+
+			builder.Services.AddScoped<IDeviceRepository, DeviceRepository>();
+
+			builder.Services.AddScoped<IGameRepository, GameRepository>();
+
+			builder.Services.AddAutoMapper(M => M.AddProfile(new MappingProfiles()));
+
+			var app = builder.Build();
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())

@@ -131,7 +131,7 @@ namespace DataAccessLayer.Data.Migrations
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Cover")
+                    b.Property<string>("CoverName")
                         .IsRequired()
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");

@@ -15,3 +15,4 @@ D:\Divcreed Projects\MVC\GameZone\BusinessLogicLayer\obj\Debug\net8.0\BusinessLo
 D:\Divcreed Projects\MVC\GameZone\BusinessLogicLayer\obj\Debug\net8.0\ref\BusinessLogicLayer.dll
 D:\Divcreed Projects\MVC\GameZone\BusinessLogicLayer\bin\Debug\net8.0\BusinessLogicLayer.runtimeconfig.json
 D:\Divcreed Projects\MVC\GameZone\BusinessLogicLayer\obj\Debug\net8.0\BusinessLogicLayer.genruntimeconfig.cache
+D:\Divcreed Projects\MVC\GameZone\BusinessLogicLayer\obj\Debug\net8.0\BusinessLogicLayer.sourcelink.json

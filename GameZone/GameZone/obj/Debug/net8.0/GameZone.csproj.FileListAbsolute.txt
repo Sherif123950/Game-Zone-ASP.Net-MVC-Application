@@ -445,3 +445,9 @@ D:\Divcreed Projects\MVC\GameZone\GameZone\bin\Debug\net8.0\tr\Microsoft.CodeAna
 D:\Divcreed Projects\MVC\GameZone\GameZone\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\Divcreed Projects\MVC\GameZone\GameZone\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\Divcreed Projects\MVC\GameZone\GameZone\bin\Debug\net8.0\libman.json
+D:\Divcreed Projects\MVC\GameZone\GameZone\obj\Debug\net8.0\GameZone.sourcelink.json
+D:\Divcreed Projects\MVC\GameZone\GameZone\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\Divcreed Projects\MVC\GameZone\GameZone\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\Divcreed Projects\MVC\GameZone\GameZone\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
+D:\Divcreed Projects\MVC\GameZone\GameZone\bin\Debug\net8.0\AutoMapper.dll
+D:\Divcreed Projects\MVC\GameZone\GameZone\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

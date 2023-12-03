@@ -18,6 +18,6 @@ namespace GameZone.ViewModels
 		[Display(Name = "Description")]
 		public string Descripiton { get; set; } = string.Empty;
 		public IFormFile Cover { get; set; } = default!;
-
+		public string CoverName { get; set; }= string.Empty;
 	}
 }
