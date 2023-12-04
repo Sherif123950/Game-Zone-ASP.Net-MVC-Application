@@ -1,10 +1,11 @@
-﻿@model CreateGameFormViewmodel
+﻿@using GameZone.Helpers
+@model CreateGameFormViewmodel
 @{
-   ViewData["Title"]="Create Game";
+	ViewData["Title"] = "Create Game";
 }
 <h5 class="mt-4">
 	<i class="bi bi-patch-plus"></i>
-	Create New Game 
+	Create New Game
 </h5>
 
 <form asp-controller="Games" enctype="multipart/form-data">
@@ -18,7 +19,7 @@
 			<div class="form-group">
 				<label asp-for="CategoryId" class="form-label mt-4"></label>
 				<select class="form-select" asp-for="CategoryId" asp-items="Model.Categories">
-					<option>    --Select Category--    </option>
+					<option value="">    --Select Category--    </option>
 				</select>
 				<span asp-validation-for="CategoryId" class="text-danger"></span>
 			</div>
@@ -36,13 +37,32 @@
 			</div>
 			<div class="form-group">
 				<label asp-for="Cover" class="form-label mt-4"></label>
-				<input class="form-control" type="file" asp-for="Cover">
-				<small class="form-text text-muted">Only jpg, jpeg, png Files Are Allowed With Maximum Size 1MB. </small>
+				<input class="form-control" type="file" asp-for="Cover" 
+				data-rule-extension="@DocumentationSettings.AllowedExtensions.Replace(".",string.Empty)" 
+				data-msg-extension="Not Allowed Extension"
+					   data-rule-filesize="@DocumentationSettings.FileMaximumSizeInByte"
+					   data-msg-filesize="Maximum Size Of File Is @(DocumentationSettings.FileMaximumSizeInMB)MB.">
+				<small class="form-text text-muted">Only @DocumentationSettings.AllowedExtensions Files Are Allowed With Maximum Size @(DocumentationSettings.FileMaximumSizeInMB)MB. </small>
 				<span asp-validation-for="Cover" class="text-danger d-block"></span>
 			</div>
 			<button type="submit" class=" btn btn-success mt-4">Create</button>
 		</div>
-		<div class="col-md-6"></div>
+		<div class="col-md-6 d-flex justify-content-center pt-4 overflow-hidden">
+			<img alt="Cover" class="cover-preview d-none" />
+		</div>
 	</div>
-	
+
 </form>
+@section Scripts {
+	<partial name="_ValidationScriptsPartial" />
+	<script>
+		$.validator.addMethod('filesize', function (value, element, param) {
+			return this.optional(element) || element.files[0].size <= param;
+		});
+		$(document).ready(function () {
+			$('#Cover').on('change', function () {
+				$('.cover-preview').attr('src', window.URL.createObjectURL(this.files[0])).removeClass('d-none');
+			});
+		});
+	</script>
+}
