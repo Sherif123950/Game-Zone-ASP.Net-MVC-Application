@@ -52,7 +52,7 @@ namespace GameZone.Controllers
 			GameVM.CoverName =await DocumentationSettings.UplaodImage(GameVM.Cover ,"Games");
 			var MappedGame = _mapper.Map<CreateGameFormViewmodel, Game>(GameVM);
 			//save game into database
-			await _gameRepository.AddGame(MappedGame);
+			await _gameRepository.AddGameAsync(MappedGame);
 			return RedirectToAction(nameof(Index));
 		}
 	}

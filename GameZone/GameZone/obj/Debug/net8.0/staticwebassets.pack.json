@@ -5,16 +5,32 @@
       "PackagePath": "staticwebassets\\GameZone.bundle.scp.css"
     },
     {
-      "Id": "D:\\Divcreed Projects\\MVC\\GameZone\\GameZone\\wwwroot\\assets\\images\\Games\\418c3931-a369-4198-aeff-23d4205f0a24OIP.jpeg",
-      "PackagePath": "staticwebassets\\assets\\images\\Games\\418c3931-a369-4198-aeff-23d4205f0a24OIP.jpeg"
+      "Id": "D:\\Divcreed Projects\\MVC\\GameZone\\GameZone\\wwwroot\\assets\\images\\Games\\1b70d84b-fa9d-461f-a279-e956c72eca21OIP (3).jpeg",
+      "PackagePath": "staticwebassets\\assets\\images\\Games\\1b70d84b-fa9d-461f-a279-e956c72eca21OIP (3).jpeg"
     },
     {
-      "Id": "D:\\Divcreed Projects\\MVC\\GameZone\\GameZone\\wwwroot\\assets\\images\\Games\\a10543ae-937f-4ba5-a571-c6d90cf3403aOIP.jpeg",
-      "PackagePath": "staticwebassets\\assets\\images\\Games\\a10543ae-937f-4ba5-a571-c6d90cf3403aOIP.jpeg"
+      "Id": "D:\\Divcreed Projects\\MVC\\GameZone\\GameZone\\wwwroot\\assets\\images\\Games\\2eced95e-32d2-4676-af0c-138c005da3c0R.jpeg",
+      "PackagePath": "staticwebassets\\assets\\images\\Games\\2eced95e-32d2-4676-af0c-138c005da3c0R.jpeg"
+    },
+    {
+      "Id": "D:\\Divcreed Projects\\MVC\\GameZone\\GameZone\\wwwroot\\assets\\images\\Games\\45ed15ae-ee18-463c-a2c6-87212c029d91OIP (2).jpeg",
+      "PackagePath": "staticwebassets\\assets\\images\\Games\\45ed15ae-ee18-463c-a2c6-87212c029d91OIP (2).jpeg"
+    },
+    {
+      "Id": "D:\\Divcreed Projects\\MVC\\GameZone\\GameZone\\wwwroot\\assets\\images\\Games\\64bcc8c3-bf0c-4024-b7e9-e556c1f2f060R (1).jpeg",
+      "PackagePath": "staticwebassets\\assets\\images\\Games\\64bcc8c3-bf0c-4024-b7e9-e556c1f2f060R (1).jpeg"
+    },
+    {
+      "Id": "D:\\Divcreed Projects\\MVC\\GameZone\\GameZone\\wwwroot\\assets\\images\\Games\\6513d2e3-306e-4daa-933c-e1f776a624c5FIFA-23-Guide-Vignette.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\Games\\6513d2e3-306e-4daa-933c-e1f776a624c5FIFA-23-Guide-Vignette.jpg"
     },
     {
       "Id": "D:\\Divcreed Projects\\MVC\\GameZone\\GameZone\\wwwroot\\assets\\images\\Games\\c88e5fce-cec4-4f3d-b780-110161cb1d60OIP.jpeg",
       "PackagePath": "staticwebassets\\assets\\images\\Games\\c88e5fce-cec4-4f3d-b780-110161cb1d60OIP.jpeg"
+    },
+    {
+      "Id": "D:\\Divcreed Projects\\MVC\\GameZone\\GameZone\\wwwroot\\assets\\images\\Games\\c8e72549-abc4-4263-94ef-8c04b5f675f0FIFA-23-Guide-Vignette.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\Games\\c8e72549-abc4-4263-94ef-8c04b5f675f0FIFA-23-Guide-Vignette.jpg"
     },
     {
       "Id": "D:\\Divcreed Projects\\MVC\\GameZone\\GameZone\\wwwroot\\css\\bootstrap.min.css",
@@ -27,6 +43,14 @@
     {
       "Id": "D:\\Divcreed Projects\\MVC\\GameZone\\GameZone\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\Divcreed Projects\\MVC\\GameZone\\GameZone\\wwwroot\\js\\file-size.js",
+      "PackagePath": "staticwebassets\\js\\file-size.js"
+    },
+    {
+      "Id": "D:\\Divcreed Projects\\MVC\\GameZone\\GameZone\\wwwroot\\js\\game-form.js",
+      "PackagePath": "staticwebassets\\js\\game-form.js"
     },
     {
       "Id": "D:\\Divcreed Projects\\MVC\\GameZone\\GameZone\\wwwroot\\js\\site.js",

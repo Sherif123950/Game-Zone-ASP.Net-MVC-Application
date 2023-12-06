@@ -13,7 +13,7 @@ namespace GameZone.Helpers.Attributes
 		{
 			var File = value as IFormFile;
 			if (File != null) 
-                if (!(File.Length > _maxFileSize))
+                if ((File.Length > _maxFileSize))
 					return new ValidationResult($"Maximum File Size Is {_maxFileSize} byte");
 			return ValidationResult.Success;
 		}

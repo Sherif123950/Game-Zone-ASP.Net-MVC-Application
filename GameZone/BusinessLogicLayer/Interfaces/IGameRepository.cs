@@ -10,10 +10,10 @@ namespace BusinessLogicLayer.Interfaces
 {
 	public interface IGameRepository
 	{
-		Task<IEnumerable<Game>> GetAllGames();
-		Task<Game?> GetById(int Id);
-		Task<int> AddGame(Game game);
-		Task<int> UpdateGame(Game game);
-		Task<int> DeleteGame(Game game);
+		Task<IEnumerable<Game>> GetAllGamesAsync();
+		Task<Game?> GetByIdAsync(int Id);
+		Task<int> AddGameAsync(Game game);
+		int UpdateGame(Game game);
+		int DeleteGame(Game game);
 	}
 }
