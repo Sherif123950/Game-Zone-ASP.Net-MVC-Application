@@ -14,5 +14,11 @@
 			await file.CopyToAsync(Stream);
 			return ImageName;
 		}
+		public  static void DeleteImage(string FolderName,string ImageName)
+		{
+			var FolderPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\assets\\images", FolderName,ImageName);
+			if (File.Exists(FolderPath))
+				File.Delete(FolderPath);
+        }
 	}
 }

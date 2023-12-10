@@ -15,10 +15,10 @@ namespace BusinessLogicLayer.Repositories
 		private readonly ApplicationDbContext _dbContext;
 
 		public GameRepository(ApplicationDbContext dbContext)
-        {
+		{
 			this._dbContext = dbContext;
 		}
-        public async Task<int> AddGameAsync(Game game)
+		public async Task<int> AddGameAsync(Game game)
 		{
 			_dbContext.Games.Add(game);
 			return await _dbContext.SaveChangesAsync();
@@ -27,17 +27,19 @@ namespace BusinessLogicLayer.Repositories
 		public int DeleteGame(Game game)
 		{
 			_dbContext.Games.Remove(game);
-			return  _dbContext.SaveChanges();
+			return _dbContext.SaveChanges();
 		}
 
 		public async Task<IEnumerable<Game>> GetAllGamesAsync()
 		{
-			return await _dbContext.Games.Include(G=>G.Category).Include(G => G.Devices).ThenInclude(D=>D.Device).AsNoTracking().ToListAsync();
+			return await _dbContext.Games.Include(G => G.Category).Include(G => G.Devices).ThenInclude(D => D.Device).AsNoTracking().ToListAsync();
 		}
 
 		public async Task<Game?> GetByIdAsync(int Id)
 		{
-			return await _dbContext.Games.FindAsync(Id);
+			return await _dbContext.Games.Include(G => G.Category).Include(G => G.Devices)
+				.ThenInclude(D => D.Device).SingleOrDefaultAsync(G => G.Id == Id);
+			//return await _dbContext.Games.FindAsync(Id);
 		}
 
 		public int UpdateGame(Game game)
