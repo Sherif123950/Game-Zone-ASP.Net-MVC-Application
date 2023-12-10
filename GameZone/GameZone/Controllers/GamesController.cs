@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using BusinessLogicLayer.Interfaces;
+using BusinessLogicLayer.Repositories;
 using DataAccessLayer.Data.Contexts;
 using DataAccessLayer.Entities;
 using GameZone.Helpers;
@@ -11,32 +12,33 @@ namespace GameZone.Controllers
 {
 	public class GamesController : Controller
 	{
+		private readonly IGenericRepository<Device> _deviceRepo;
+		private readonly IGenericRepository<Category> _categoryRepo;
 		private readonly ApplicationDbContext _dbContext;
 		private readonly IMapper _mapper;
 		private readonly IGameRepository _gameRepository;
 		private readonly ICategoryRepository _categoryRepository;
 		private readonly IDeviceRepository _deviceRepository;
 
-		public GamesController(ApplicationDbContext dbContext, IMapper mapper, IGameRepository gameRepository, ICategoryRepository categoryRepository, IDeviceRepository deviceRepository)
+		public GamesController(IGenericRepository<Device> DeviceRepo, IGenericRepository<Category> CategoryRepo, ApplicationDbContext dbContext, IMapper mapper, IGameRepository gameRepository, ICategoryRepository categoryRepository, IDeviceRepository deviceRepository)
 		{
+			_deviceRepo = DeviceRepo;
+			_categoryRepo = CategoryRepo;
 			this._dbContext = dbContext;
 			this._mapper = mapper;
 			this._gameRepository = gameRepository;
 			this._categoryRepository = categoryRepository;
 			this._deviceRepository = deviceRepository;
 		}
-		public async Task<IActionResult> Index()
-		{
-			var Games = await _gameRepository.GetAllGamesAsync();
-			return View(Games);
-		}
+
+		#region Create
 		[HttpGet]
 		public IActionResult Create()
 		{
 			CreateGameFormViewmodel ViewModel = new()
 			{
-				Categories = _categoryRepository.GetSelectedList(),
-				Devices = _deviceRepository.GetSelectedList()
+				Categories =_categoryRepo.GetSelectedList(),
+				Devices = _deviceRepo.GetSelectedList()
 
 			};
 			return View(ViewModel);
@@ -47,8 +49,8 @@ namespace GameZone.Controllers
 		{
 			if (!ModelState.IsValid)
 			{
-				GameVM.Categories = _categoryRepository.GetSelectedList();
-				GameVM.Devices = _deviceRepository.GetSelectedList();
+				GameVM.Categories = _categoryRepo.GetSelectedList();
+				GameVM.Devices = _deviceRepo.GetSelectedList();
 				return View(GameVM);
 			}
 			//upload coevr image to server
@@ -58,6 +60,15 @@ namespace GameZone.Controllers
 			await _gameRepository.AddGameAsync(MappedGame);
 			return RedirectToAction(nameof(Index));
 		}
+		#endregion
+
+		#region Read 
+		public async Task<IActionResult> Index()
+		{
+			var Games = await _gameRepository.GetAllGamesAsync();
+			return View(Games);
+		}
+
 		[HttpGet]
 		public async Task<IActionResult> Details(int? id)
 		{
@@ -71,7 +82,10 @@ namespace GameZone.Controllers
 				return NotFound();
 			}
 			return View(Game);
-		}
+		} 
+		#endregion
+
+		#region Update 
 		[HttpGet]
 		public async Task<IActionResult> Edit(int id)
 		{
@@ -79,8 +93,8 @@ namespace GameZone.Controllers
 			if (Game is null)
 				return NotFound();
 			var MappedGame = _mapper.Map<Game, EditFormViewModel>(Game);
-			MappedGame.Categories = _categoryRepository.GetSelectedList();
-			MappedGame.Devices = _deviceRepository.GetSelectedList();
+			MappedGame.Categories = _categoryRepo.GetSelectedList();
+			MappedGame.Devices = _deviceRepo.GetSelectedList();
 			return View(MappedGame);
 		}
 		[HttpPost]
@@ -93,12 +107,16 @@ namespace GameZone.Controllers
 			}
 			if (ModelState.IsValid)
 			{
-				var OldCoverName = model.CoverName;				
 				var Game = await _gameRepository.GetByIdAsync(model.Id);
 				if (Game is null)
 					return NotFound();
+				var OldCoverName = Game.CoverName;
+				//-------------------------------------------Soluiton Number 1
+				//if (model.Cover is not null)
+				//	model.CoverName = await DocumentationSettings.UplaodImage(model.Cover, "Games");
 				//var MappedGame = _mapper.Map<EditFormViewModel, Game>(model);
-				//-------------------------------------------
+				//var Res = _gameRepository.UpdateGame(model.Id,MappedGame);
+				//-------------------------------------------Solution Number 2
 				Game.Name = model.Name;
 				Game.Descripiton = model.Descripiton;
 				Game.CategoryId = model.CategoryId;
@@ -107,16 +125,33 @@ namespace GameZone.Controllers
 					Game.CoverName = await DocumentationSettings.UplaodImage(model.Cover, "Games");
 				var Res = _dbContext.SaveChanges();
 				//---------------------------------------------
-				//var Res = _gameRepository.UpdateGame(MappedGame);
 				if (Res > 0)
 				{
-                    if (model.Cover is not null)
-                        DocumentationSettings.DeleteImage("Games", OldCoverName);                    
+					if (model.Cover is not null)
+						DocumentationSettings.DeleteImage("Games", OldCoverName);
 					return RedirectToAction(nameof(Index));
 				}
 			}
 			DocumentationSettings.DeleteImage("Games", model.CoverName);
 			return View(model);
 		}
+		#endregion
+
+		#region Delete
+		[HttpDelete]
+		public async Task<IActionResult> Delete(int id)
+		{
+			var Game = await _gameRepository.GetByIdAsync(id);
+			if (Game is null)
+				return NotFound();
+			var Result = _gameRepository.DeleteGame(Game);
+            if (Result>0)
+            {
+				DocumentationSettings.DeleteImage("Games", Game.CoverName);
+				return Ok();
+            }
+			return BadRequest();
+        }
+		#endregion
 	}
 }

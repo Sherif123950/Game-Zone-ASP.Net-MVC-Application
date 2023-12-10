@@ -29,6 +29,8 @@ namespace GameZone
 
 			builder.Services.AddScoped<IGameRepository, GameRepository>();
 
+            builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+
 			builder.Services.AddAutoMapper(M => M.AddProfile(new MappingProfiles()));
 
 			var app = builder.Build();

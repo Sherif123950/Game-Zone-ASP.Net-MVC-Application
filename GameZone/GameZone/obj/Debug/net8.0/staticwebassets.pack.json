@@ -5,16 +5,20 @@
       "PackagePath": "staticwebassets\\GameZone.bundle.scp.css"
     },
     {
+      "Id": "D:\\Divcreed Projects\\MVC\\GameZone\\GameZone\\wwwroot\\assets\\images\\Games\\158e6cc5-4a25-4e70-ad39-795bb7bd88edR (1).jpeg",
+      "PackagePath": "staticwebassets\\assets\\images\\Games\\158e6cc5-4a25-4e70-ad39-795bb7bd88edR (1).jpeg"
+    },
+    {
+      "Id": "D:\\Divcreed Projects\\MVC\\GameZone\\GameZone\\wwwroot\\assets\\images\\Games\\1b66f2f0-60a8-44b2-b77c-9bb14ca3e975OIP (1).jpeg",
+      "PackagePath": "staticwebassets\\assets\\images\\Games\\1b66f2f0-60a8-44b2-b77c-9bb14ca3e975OIP (1).jpeg"
+    },
+    {
       "Id": "D:\\Divcreed Projects\\MVC\\GameZone\\GameZone\\wwwroot\\assets\\images\\Games\\1b70d84b-fa9d-461f-a279-e956c72eca21OIP (3).jpeg",
       "PackagePath": "staticwebassets\\assets\\images\\Games\\1b70d84b-fa9d-461f-a279-e956c72eca21OIP (3).jpeg"
     },
     {
       "Id": "D:\\Divcreed Projects\\MVC\\GameZone\\GameZone\\wwwroot\\assets\\images\\Games\\2eced95e-32d2-4676-af0c-138c005da3c0R.jpeg",
       "PackagePath": "staticwebassets\\assets\\images\\Games\\2eced95e-32d2-4676-af0c-138c005da3c0R.jpeg"
-    },
-    {
-      "Id": "D:\\Divcreed Projects\\MVC\\GameZone\\GameZone\\wwwroot\\assets\\images\\Games\\45ed15ae-ee18-463c-a2c6-87212c029d91OIP (2).jpeg",
-      "PackagePath": "staticwebassets\\assets\\images\\Games\\45ed15ae-ee18-463c-a2c6-87212c029d91OIP (2).jpeg"
     },
     {
       "Id": "D:\\Divcreed Projects\\MVC\\GameZone\\GameZone\\wwwroot\\assets\\images\\Games\\5afea872-c897-4d66-b500-18d1161c8b77OIP (1).jpeg",
@@ -27,6 +31,14 @@
     {
       "Id": "D:\\Divcreed Projects\\MVC\\GameZone\\GameZone\\wwwroot\\assets\\images\\Games\\6513d2e3-306e-4daa-933c-e1f776a624c5FIFA-23-Guide-Vignette.jpg",
       "PackagePath": "staticwebassets\\assets\\images\\Games\\6513d2e3-306e-4daa-933c-e1f776a624c5FIFA-23-Guide-Vignette.jpg"
+    },
+    {
+      "Id": "D:\\Divcreed Projects\\MVC\\GameZone\\GameZone\\wwwroot\\assets\\images\\Games\\79b5f98e-5225-4324-907c-6d1d6c6f20ccOIP (4).jpeg",
+      "PackagePath": "staticwebassets\\assets\\images\\Games\\79b5f98e-5225-4324-907c-6d1d6c6f20ccOIP (4).jpeg"
+    },
+    {
+      "Id": "D:\\Divcreed Projects\\MVC\\GameZone\\GameZone\\wwwroot\\assets\\images\\Games\\92f15505-463f-4c1d-8ac7-645fa3a68feeOIP (2).jpeg",
+      "PackagePath": "staticwebassets\\assets\\images\\Games\\92f15505-463f-4c1d-8ac7-645fa3a68feeOIP (2).jpeg"
     },
     {
       "Id": "D:\\Divcreed Projects\\MVC\\GameZone\\GameZone\\wwwroot\\assets\\images\\Games\\c88e5fce-cec4-4f3d-b780-110161cb1d60OIP.jpeg",
@@ -59,6 +71,10 @@
     {
       "Id": "D:\\Divcreed Projects\\MVC\\GameZone\\GameZone\\wwwroot\\js\\game-form.js",
       "PackagePath": "staticwebassets\\js\\game-form.js"
+    },
+    {
+      "Id": "D:\\Divcreed Projects\\MVC\\GameZone\\GameZone\\wwwroot\\js\\game-index.js",
+      "PackagePath": "staticwebassets\\js\\game-index.js"
     },
     {
       "Id": "D:\\Divcreed Projects\\MVC\\GameZone\\GameZone\\wwwroot\\js\\site.js",
@@ -311,6 +327,14 @@
     {
       "Id": "D:\\Divcreed Projects\\MVC\\GameZone\\GameZone\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "D:\\Divcreed Projects\\MVC\\GameZone\\GameZone\\wwwroot\\lib\\sweetalert2\\sweetalert2.min.css",
+      "PackagePath": "staticwebassets\\lib\\sweetalert2\\sweetalert2.min.css"
+    },
+    {
+      "Id": "D:\\Divcreed Projects\\MVC\\GameZone\\GameZone\\wwwroot\\lib\\sweetalert2\\sweetalert2.min.js",
+      "PackagePath": "staticwebassets\\lib\\sweetalert2\\sweetalert2.min.js"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.GameZone.Microsoft.AspNetCore.StaticWebAssets.props",

@@ -13,7 +13,7 @@ namespace BusinessLogicLayer.Interfaces
 		Task<IEnumerable<Game>> GetAllGamesAsync();
 		Task<Game?> GetByIdAsync(int Id);
 		Task<int> AddGameAsync(Game game);
-		int UpdateGame(Game game);
+		//int UpdateGame(int id, Game game);
 		int DeleteGame(Game game);
 	}
 }

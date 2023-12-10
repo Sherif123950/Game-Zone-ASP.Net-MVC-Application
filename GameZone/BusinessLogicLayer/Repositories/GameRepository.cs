@@ -18,18 +18,15 @@ namespace BusinessLogicLayer.Repositories
 		{
 			this._dbContext = dbContext;
 		}
+		#region Create 
 		public async Task<int> AddGameAsync(Game game)
 		{
 			_dbContext.Games.Add(game);
 			return await _dbContext.SaveChangesAsync();
-		}
+		} 
+		#endregion
 
-		public int DeleteGame(Game game)
-		{
-			_dbContext.Games.Remove(game);
-			return _dbContext.SaveChanges();
-		}
-
+		#region Read 
 		public async Task<IEnumerable<Game>> GetAllGamesAsync()
 		{
 			return await _dbContext.Games.Include(G => G.Category).Include(G => G.Devices).ThenInclude(D => D.Device).AsNoTracking().ToListAsync();
@@ -41,11 +38,21 @@ namespace BusinessLogicLayer.Repositories
 				.ThenInclude(D => D.Device).SingleOrDefaultAsync(G => G.Id == Id);
 			//return await _dbContext.Games.FindAsync(Id);
 		}
+		#endregion
 
-		public int UpdateGame(Game game)
+		#region Delete
+		public int DeleteGame(Game game)
 		{
-			_dbContext.Games.Update(game);
+			_dbContext.Games.Remove(game);
 			return _dbContext.SaveChanges();
-		}
+		} 
+		#endregion
+
+		//public int UpdateGame(int id, Game game)
+		//{
+
+		//	_dbContext.Games.Update(game);
+		//	return _dbContext.SaveChanges();
+		//}
 	}
 }
